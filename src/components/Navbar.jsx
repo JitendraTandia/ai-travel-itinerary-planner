@@ -5,9 +5,9 @@ import Avatar from "../assets/avatar.png";
 function Navbar() {
   return (
     <div>
-      <div className="w-full p-4 px-24  bg-red-400 flex items-center justify-between">
+      <div className="w-full p-4 px-24 fixed z-[999] flex items-center backdrop-blur-md justify-between">
         <img src={Logo} alt="logoImg" />
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center justify-between gap-4">
           <h1 className="font-semibold">Dashboard</h1>
           <h1>FAQ</h1>
         </div>
