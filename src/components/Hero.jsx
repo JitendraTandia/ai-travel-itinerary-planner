@@ -3,7 +3,7 @@ import React from "react";
 function Hero() {
   return (
     <div className="px-24 flex flex-col items-center " >
-        <div className="mt-48 flex flex-col items-center">
+        <div className=" flex flex-col items-center">
         <h1 className="text-6xl font-semibold max-w-[1000px] text-center">
           Plan Group Tours Effortlessly: Your Ultimate Itinerary Companion
         </h1>
