@@ -16,7 +16,7 @@ const RecentTripsCard = ({ title, date, thumbnail }) => {
 function RecentTrips() {
   return (
     <div className="px-24 mt-10 ">
-      <h1 className="text-2xl px-14 font-semibold text-white">Recent Trips</h1>
+      <h1 className="text-3xl  font-semibold text-white">Recent Trips</h1>
       <div className="py-4 grid grid-cols-3 justify-self-center gap-20">
         {Array.isArray(recentTripsData) &&
           recentTripsData.map((item, idx) => (

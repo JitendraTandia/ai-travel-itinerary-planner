@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import { Outlet } from 'react-router-dom'
 
-function Layout( {children} ) {
+function Layout() {
   return (
     <div>
         <Navbar/>
-        <main className='min-h-[70vh]'> {children} </main>
+        <main className='min-h-[70vh] '> {<Outlet/>} </main>
         
     </div>
   )
