@@ -5,13 +5,14 @@ import { path } from "./routes/path";
 
 function App() {
   return (
-    <Routes>
-      <Route path={path.home} element={<Layout />}>
-        <Route index element={<HomePage/>} />
-        <Route path={path.trip} element={<TripItinerary />} />
-        <Route path={path.rent} element={<Rent/>} />
-      </Route>
-    </Routes>
+      <Layout>
+        <div className="bg-bg pb-7 h-screen flex flex-col justify-end items-center  bg-cover bg-no-repeat backdrop-contrast-75">
+          <Hero />
+          <RecentTrips />
+        </div>
+          {/* <TripItinerary/> */}
+      </Layout>
+    // </div>
   );
 }
 
