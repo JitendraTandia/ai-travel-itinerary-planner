@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -14,7 +15,7 @@ function Hero() {
           transport, and activities—all in one place.
         </p>
      
-        <button className="px-5 py-3 bg-black text-white rounded-lg">Add a Trip</button>
+        <Link to="/trip"><button className="px-5 py-3 bg-black text-white rounded-lg">Add a Trip</button></Link>
         </div>
     </div>
   );

@@ -1,17 +1,18 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import TabNavBar from '../components/TabNavBar'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 
 function Layout( ) {
-  const pathName = window.location.pathname
+  const location = useLocation()
+  const pathName = location.pathname
 
   return (
     <div>
         <Navbar/>
-        <main className='min-h-[70vh] pt-20'> {<Outlet/>} 
-        {pathName!=="/" && <TabNavBar/>}
+        <main className='min-h-[70vh] '> {<Outlet/>} 
         </main>
+        {pathName!=="/" && <TabNavBar/>}
 
         
     </div>

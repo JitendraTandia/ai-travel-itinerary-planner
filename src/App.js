@@ -1,18 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout/Layout";
-import {HomePage,Rent,TripItinerary} from  "./routes/elementPath"
+import { HomePage, Rent, TripItinerary,People,NotFound } from "./routes/elementPath";
 import { path } from "./routes/path";
 
 function App() {
   return (
-      <Layout>
-        <div className="bg-bg pb-7 h-screen flex flex-col justify-end items-center  bg-cover bg-no-repeat backdrop-contrast-75">
-          <Hero />
-          <RecentTrips />
-        </div>
-          {/* <TripItinerary/> */}
-      </Layout>
-    // </div>
+    <Routes>
+      <Route path="*" element={<NotFound />} />
+      <Route path={path.home} element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path={path.rent} element={<Rent />} />
+        <Route path={path.trip} element={<TripItinerary />} />
+        <Route path={path.people} element={<People />} />
+      </Route>
+    </Routes>
   );
 }
 

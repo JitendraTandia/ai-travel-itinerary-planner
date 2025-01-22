@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const ChatPeopleList = () => {
-    const [selectedUser,setSelectedUser] = useState(null)
+const ChatPeopleList = ({selectedUser,setSelectedUser}) => {
+    
     console.log(selectedUser)
   let users = [
     {

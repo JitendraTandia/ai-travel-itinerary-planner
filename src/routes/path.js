@@ -1,5 +1,6 @@
 export const path = {
   home: "/",
-  trip: "trip-itinerary",
+  trip: "trip",
   rent: "rent",
+  people:"people"
 };
