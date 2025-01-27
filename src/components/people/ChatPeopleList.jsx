@@ -38,21 +38,21 @@ const ChatPeopleList = ({selectedUser,setSelectedUser}) => {
   ];
   return (
     <div className="px-2 w-[30%]">
-      <h1 className="text-2xl font-semibold tracking-tight mb-3 ">Friends in this trip</h1>
+      <h1 className="text-2xl font-semibold tracking-tight mb-3 mt-6 ">Friends in this trip</h1>
       {users.map((user) => (
         <button
           key={user.id}
           onClick={() => setSelectedUser(user)}
-          className={`w-full border flex items-center gap-3 p-3 rounded-lg transition-colors mb-1
+          className={`w-full border flex items-center gap-3 p-1 rounded-lg transition-colors mb-1
              `}
         >
-          <div className="relative">
-            <div className="h-8 border-2 overflow-hidden aspect-square w-8  rounded-full">
+          <div className="relative p-4 flex items-center ">
+            <div className="h-12 w-12 border-2  overflow-hidden aspect-square   rounded-full">
               <img className="object-cover" src={user.avatar} alt={user.name} />
             </div>
             {user.status && (
               <span
-                className={`absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-background
+                className={`absolute  bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-background
                   ${
                     user.status === "online"
                       ? "bg-green-500"
