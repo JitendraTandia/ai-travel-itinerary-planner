@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout/Layout";
-import { HomePage, Rent, TripItinerary,People,NotFound } from "./routes/elementPath";
+import { HomePage, Rent, TripItinerary,People,NotFound, RegisterPage } from "./routes/elementPath";
 import { path } from "./routes/path";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Route path={path.trip} element={<TripItinerary />} />
         <Route path={path.people} element={<People />} />
       </Route>
+      <Route path={path.register} element={<RegisterPage/>}/>
+      <Route path={path.login} element={<LoginPage/>}/>
     </Routes>
   );
 }

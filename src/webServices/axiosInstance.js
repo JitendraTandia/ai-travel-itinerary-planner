@@ -1,16 +1,15 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export function axiosClient() {
-  const token = Cookies.get("token");
+export const axiosClient = () => {
+  const token = Cookies.get("Logtk");
+  console.log(token);
   return axios.create({
-    // baseURL: "http://localhost:5010/api",
-    // baseURL: "https://ed-backend.vercel.app/api",
-    baseURL: "https://api.resonanceindore.com/api",
+    baseURL: "http://localhost:8080/api",
     headers: {
       "Content-Type": "Application/JSON",
       Accept: "*/*",
       Authorization: `Bearer ${token}`,
     },
-  })
-}
+  });
+};
