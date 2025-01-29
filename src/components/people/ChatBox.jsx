@@ -63,33 +63,33 @@ const messages = [
   },
 ];
 const ChatBox = ({ selectedUser }) => {
-  const inputRef =  useRef()
-  let userName = localStorage.getItem("user")
+  const inputRef = useRef();
+  let userName = localStorage.getItem("user");
   const [shareMedia, setShareMedia] = useState(false);
   const [message, setMessage] = useState(messages);
-  const [messageText,setMessageText] = useState({
-    id: message.length+1,
+  const [messageText, setMessageText] = useState({
+    id: message.length + 1,
     content: "Hey, how's the planning going?",
     sender: userName,
     isSent: false,
     timestamp: "10:30 AM",
-  },)
+  });
   console.log(selectedUser, "kjkl");
 
-  function handleSendMessage(messageObj){
-    setMessage([...message,messageObj]);
-    setMessageText(null)
-    inputRef.current.value =""
-  };
+  function handleSendMessage(messageObj) {
+    setMessage([...message, messageObj]);
+    setMessageText(null);
+    inputRef.current.value = "";
+  }
 
-  console.log(messageText)
+  console.log(messageText);
 
   return (
     <>
       {selectedUser !== null ? (
-        <section className="flex border border-collapse flex-col">
+        <section className="flex border mt-[70px] border-collapse flex-col ">
           {/* ------------header--------------- */}
-          <div className="px-6 py-4 border-b flex items-center justify-between bg-background">
+          <div className="px-6 py-4 border-b flex items-center justify-between  bg-background">
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="h-12 border-2 overflow-hidden aspect-square w-12  rounded-full">
@@ -136,7 +136,9 @@ const ChatBox = ({ selectedUser }) => {
                 <div
                   key={message.id}
                   className={`flex ${
-                    message.sender === userName ? "justify-end" : "justify-start"
+                    message.sender === userName
+                      ? "justify-end"
+                      : "justify-start"
                   } `}
                 >
                   <div>
@@ -272,8 +274,10 @@ const ChatBox = ({ selectedUser }) => {
               <div className="relative flex-1 flex items-center">
                 {" "}
                 <input
-                ref={inputRef}
-                onChange={(e)=>{setMessageText({...messageText,content:e.target.value})}}
+                  ref={inputRef}
+                  onChange={(e) => {
+                    setMessageText({ ...messageText, content: e.target.value });
+                  }}
                   placeholder="Type a message"
                   className=" p-2 text-xl w-full rounded-full border border-gray-300"
                 />
@@ -314,7 +318,7 @@ const ChatBox = ({ selectedUser }) => {
                     />
                   </svg>
                 </div>
-                <div onClick={()=>handleSendMessage(messageText)} id="send">
+                <div onClick={() => handleSendMessage(messageText)} id="send">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -335,7 +339,7 @@ const ChatBox = ({ selectedUser }) => {
           </div>
         </section>
       ) : (
-        <div className="min-w-[50%] h-[60vh] border-2 flex items-center justify-center">
+        <div className="min-w-[50%] h-[60vh] border-2 flex items-center justify-center mt-[70px]">
           <h2>select user to view chat</h2>
         </div>
       )}
