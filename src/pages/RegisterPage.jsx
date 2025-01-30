@@ -9,12 +9,13 @@ import { useForm } from "react-hook-form";
 import { axiosClient } from "../webServices/axiosInstance";
 import axios from "axios";
 import { Loading, Notify } from "notiflix";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { path } from "../routes/path";
-import { useGoogleLogin } from "@react-oauth/google";
-import { googleLogout } from "@react-oauth/google";
+
 
 const RegisterPage = () => {
+
+  const navigate = useNavigate()
   // // -----------------o auth---------------------
   // const [user, setUser] = useState([]);
   // const [profile, setProfile] = useState([]);
@@ -52,6 +53,8 @@ const RegisterPage = () => {
       reset();
       Loading.remove();
       Notify.success("user has been registered successfully");
+      navigate("/login")
+
     } catch (error) {
       Notify.failure(error.message);
       Loading.remove();

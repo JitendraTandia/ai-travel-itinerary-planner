@@ -19,11 +19,12 @@ const LoginPage = () => {
   } = useForm();
 
   const handleLogin = async (data) => {
-    // Loading.circle();
-    console.log(data);
+    // console.log("jeeeeeeettt", data);
     try {
       const res = await axiosClient().post("/user/login", data);
+      // console.log("ressss",res)
       let response = res.data;
+      console.log("jjejejejej",response.data)
       if (!response.status) {
         Notify.failure(response.message);
         return;
@@ -32,11 +33,14 @@ const LoginPage = () => {
       Loading.remove();
       Notify.success(data.message);
       Cookies.set("Logtk", response.data.token);
+      sessionStorage.setItem("userDetail", JSON.stringify(response.data))
     } catch (error) {
       Notify.failure(error.message);
       Loading.remove();
     }
   };
+
+
   const user = Cookies.get("Logtk");
   return (
     <>
